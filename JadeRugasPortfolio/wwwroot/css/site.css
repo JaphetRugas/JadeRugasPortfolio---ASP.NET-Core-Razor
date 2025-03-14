@@ -1,0 +1,222 @@
+:root {
+    --primary: #3a86ff;
+    --secondary: #8338ec;
+    --dark: #1a1a2e;
+    --light: #f8f9fa;
+    --success: #06d6a0;
+    --info: #0dcaf0;
+    --warning: #ffd166;
+    --danger: #ef476f;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+    .glass-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+.navbar {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-radius: 0 0 20px 20px;
+}
+
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        z-index: -1;
+    }
+
+.gradient-text {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.project-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card .card-body {
+        padding: 2rem;
+    }
+
+.footer {
+    background: var(--dark);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 5rem;
+    border-radius: 20px 20px 0 0;
+}
+
+.btn-custom {
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    transition: var(--transition);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border: none;
+}
+
+.btn-dark {
+    background: var(--dark);
+}
+
+.btn-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+    .social-link:hover {
+        background: white;
+        color: var(--primary);
+        transform: translateY(-3px);
+    }
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-item {
+    margin: 0 5px;
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem !important;
+    font-weight: 500;
+}
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        transition: var(--transition);
+        transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 80%;
+    }
+
+.bg-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 25% 25%, rgba(58, 134, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(131, 56, 236, 0.05) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.circle-decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    top: -150px;
+    right: -100px;
+}
+
+.circle-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--secondary);
+    bottom: -200px;
+    left: -200px;
+}
+
+.skill-pill {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    margin: 0.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--dark);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh;
+        text-align: center;
+    }
+
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+}

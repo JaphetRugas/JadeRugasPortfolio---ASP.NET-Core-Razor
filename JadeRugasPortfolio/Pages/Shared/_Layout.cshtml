@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - JadeRugasPortfolio</title>  
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    <div class="circle-decoration circle-1"></div>
+    <div class="circle-decoration circle-2"></div>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-nav">
+            <div class="container">
+                <a class="navbar-brand fw-bold" asp-area="" asp-page="/Index">
+                    <span class="gradient-text">Jade Rugas | Backend Dev</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h4 class="fw-bold gradient-text mb-4">Jade Japhet Rugas</h4>
+                    <p class="text-white-50">Backend Developer & Software Engineer specializing in creating robust, scalable applications that drive business success.</p>
+                    <div class="mt-4">
+                        <a href="https://www.linkedin.com/in/jade-japhet-rugas-459938288" class="social-link me-3" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/JaphetRugas" class="social-link me-3" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Contact</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> rugas.jadejaphet.123@gmail.com</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +63 956 046 9067</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Philippines</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3 border-white-50">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start text-white-50">
+                    &copy; 2025 - Jade Japhet Rugas
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <small class="text-white-50">Designed with <i class="fas fa-heart text-danger"></i> in ASP.NET Core</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
